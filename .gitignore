@@ -1,0 +1,13 @@
+其它资料/
+.claude/
+.vscode/
+handoff-temp/
+
+.env
+.env.*
+*.log
+
+node_modules/
+dist/
+build/
+.cache/
