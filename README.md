@@ -5,7 +5,6 @@
 ## 内容
 
 - `superpowers/`：Superpowers skills 相关内容、脚本、测试和文档。
-- `oc-source/`：OpenCode skills 源文件与相关资料。
 - `docs/`：项目说明、使用路径和合并分析文档。
 - `AGENTS.md`：当前项目的协作与本地化规范。
 
