@@ -1,6 +1,6 @@
 ﻿---
 name: brainstorming
-description: 在任何创造性工作开始前必须使用：创建功能、构建组件、增加能力或修改行为前，先澄清用户意图、需求和设计，再进入实现。用户说"先聊方案""帮我想清楚""出个设计""我要做个功能""我们先 brainstorm 一下"时也可触发。快速一次性原型验证（几小时可丢弃的实验）走 prototype skill，不走本流程。
+description: 在需求、意图或设计尚未明确的创造性工作开始前使用：创建功能、构建组件、增加能力或修改行为前，先澄清问题和方案。用户说"先聊方案""帮我想清楚""出个设计""我要做个功能""我们先 brainstorm 一下"时也可触发；勿触发于已有方案的压力测试、可丢弃原型或已准备写正式实现代码，分别走 grill-me、prototype 和 test-driven-development。
 disable-model-invocation: true
 ---
 

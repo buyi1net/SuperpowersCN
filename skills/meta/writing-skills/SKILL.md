@@ -1,6 +1,6 @@
 ---
 name: writing-skills
-description: 创建、编辑或部署前验证 agent skills 时使用。用户说“写一个 skill”、“改这个 skill”、“验证 skill 是否生效”、“出 skill 草稿”、“按 TDD 做 skill”时也可触发。
+description: 从零创建 agent skill，或按 TDD 编辑、验证、部署前检查 skill 行为时使用。用户说"写一个新 skill""从零做个 skill""验证 skill 是否生效""出 skill 草稿""按 TDD 做 skill"时也可触发；勿触发于已有 skill 的汉化、中文增强、结构咨询或触发边界审查，这些走 write-a-skill。
 disable-model-invocation: true
 ---
 

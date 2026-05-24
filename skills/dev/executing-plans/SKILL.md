@@ -1,6 +1,6 @@
 ---
 name: executing-plans
-description: 已有书面实现计划，并准备在当前会话中按任务执行、在检查点复核时使用。用户说“执行这个计划”、“按计划做”、“按实现计划执行”、“在当前会话里跑这个计划”时也可触发。
+description: 已有书面实现计划，并准备在当前会话中由当前 agent 按任务执行、在检查点复核时使用。用户说"执行这个计划""按计划做""按实现计划执行""在当前会话里跑这个计划"时也可触发；勿触发于明确要求每个任务开子 agent 或只是并行调查的场景，分别走 subagent-driven-development 和 dispatching-parallel-agents。
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: subagent-driven-development
-description: 在当前会话中执行实现计划，且计划里的任务大多相互独立、适合交给子 agent 分别完成时使用。用户说“用子 agent 执行计划”、“分派任务给子 agent”、“让子 agent 按计划做”、“每个任务开一个 agent”时也可触发。
+description: 已有书面实现计划，且计划里的任务大多相互独立、适合交给不同子 agent 分别实现并审查时使用。用户说"用子 agent 执行计划""分派任务给子 agent""让子 agent 按计划做""每个任务开一个 agent"时也可触发；勿触发于当前会话手动执行计划或无计划的并行调查，分别走 executing-plans 和 dispatching-parallel-agents。
 disable-model-invocation: true
 ---
 

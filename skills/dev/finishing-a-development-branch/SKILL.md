@@ -1,6 +1,6 @@
 ---
 name: finishing-a-development-branch
-description: 实现已完成、测试已通过，并且需要决定如何合入、创建 PR、保留分支或清理工作区时使用。通过结构化选项完成开发分支收尾，在任何合并、删除或清理前保持验证和人工确认。用户说"收尾""完成分支""代码写完了怎么处理""这个分支怎么合""清理工作区""帮我合并""准备 PR"时也可触发。
+description: 实现已完成且验证/审查已处理后，需要决定如何合入、创建 PR、保留分支或清理工作区时使用。用户说"收尾""完成分支""代码写完了怎么处理""这个分支怎么合""清理工作区""帮我合并""准备 PR"时也可触发；勿触发于仅需完成前验证或代码审查的场景，分别走 verification-before-completion 和 requesting-code-review。
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: zoom-out
-description: 让 agent 跳出局部代码，先说明相关模块、调用方和领域概念在整体系统中的位置。用户不熟悉某段代码、想理解它如何嵌入更大的代码库，或要求放大视角、先讲全局时使用。
+description: 让 agent 跳出局部代码，先说明相关模块、调用方和领域概念在整体系统中的位置。用户不熟悉某段代码、想理解它如何嵌入更大的代码库，或要求放大视角、先讲全局时使用；勿触发于主动寻找架构重构或模块加深机会，那些走 improve-codebase-architecture。
 disable-model-invocation: true
 ---
 

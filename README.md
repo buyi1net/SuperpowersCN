@@ -138,6 +138,7 @@ claude mcp add --plugin /path/to/this-repo
 
 - [OpenCode 安装与使用](docs/README.opencode.md)
 - [测试指南](docs/testing.md)
+- [Skill 触发矩阵验收](docs/skill-trigger-matrix.md)
 - [Windows hook 说明](docs/windows/polyglot-hooks.md)
 
 ## 许可与致谢

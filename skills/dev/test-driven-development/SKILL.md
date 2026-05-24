@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: 在实现任何功能、bug 修复、重构或行为变更，且准备编写实现代码前使用。用户说“加个功能”、“修这个 bug”、“改一下行为”、“先写代码吧”时也可触发。
+description: 在需求或根因已明确，并准备编写正式实现代码来完成功能、bug 修复、重构或行为变更前使用。用户说"加个功能""修这个 bug""改一下行为""先写代码吧"时也可触发；勿触发于需求未澄清、根因未知或只做可丢弃原型，分别走 brainstorming、systematic-debugging 和 prototype。
 disable-model-invocation: true
 ---
 

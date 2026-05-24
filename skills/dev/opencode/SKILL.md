@@ -1,6 +1,6 @@
 ---
 name: opencode
-description: 将编码任务委托给 OpenCode CLI 代理，用于功能实现、代码重构、PR 审查、长时间自动会话；需提前安装并认证 OpenCode CLI。用户说"用 OpenCode 做""交给 opencode""开个 OpenCode 会话""让 OC 跑一下"时使用。
+description: 将编码任务明确委托给 OpenCode CLI 代理，用于功能实现、代码重构、PR 审查或长时间自动会话；需提前安装并认证 OpenCode CLI。只有用户说"用 OpenCode 做""交给 opencode""开个 OpenCode 会话""让 OC 跑一下"或明确要求外部 CLI agent 时使用；勿触发于普通实现、调试或代码审查请求。
 version: 1.2.0
 author: Hermes Agent
 license: MIT
