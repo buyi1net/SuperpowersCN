@@ -1,6 +1,6 @@
 ---
 name: triage
-description: 通过 triage 角色驱动的小型状态机管理 issue。用户想创建 issue、triage issue、审查新提交的 bug 或功能请求、为 AFK agent 准备 issue，或管理 issue 工作流时使用。
+description: 通过 triage 角色驱动的小型状态机管理已有或新提交的 issue。用户想 triage issue、审查新提交的 bug 或功能请求、补齐信息、标记是否 ready、为 AFK agent 准备 issue 时使用；勿触发于把 PRD 或计划批量拆成实现 issue，那些走 to-issues。
 disable-model-invocation: true
 ---
 

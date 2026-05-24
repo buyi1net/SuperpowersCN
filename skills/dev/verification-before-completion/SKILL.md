@@ -1,6 +1,6 @@
 ﻿---
 name: verification-before-completion
-description: 准备声称工作完成、问题已修复、检查已通过，可以提交、创建 PR 或交付前需要先验证证据时使用。任何"完成了、修好了、通过了、可以交付了"的表达，都必须先有当前会话中的新鲜验证证据。用户说"做完了""修好了""通过了""可以提交了""可以交付了""PR 前验证一下"时也可触发。注意：本 skill 只管验证证据，分支收尾请走 finishing-a-development-branch，请求审查请走 requesting-code-review。
+description: 准备声称工作完成、问题已修复、检查已通过，可以提交、创建 PR 或交付前需要先验证证据时使用。用户说"做完了""修好了""通过了""可以提交了""可以交付了""PR 前验证一下"时也可触发；本 skill 只做完成前证据验证，勿触发于代码审查或分支合并/清理决策，分别走 requesting-code-review 和 finishing-a-development-branch。
 disable-model-invocation: true
 ---
 

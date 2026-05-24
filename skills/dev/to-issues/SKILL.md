@@ -1,6 +1,6 @@
 ---
 name: to-issues
-description: 采用 tracer bullet 纵向切片，将计划、规格或 PRD 拆成可独立承接的 issue，并发布到项目 issue tracker。用户想把计划转为 issue、创建实现任务，或将工作拆解为可执行 issue 时使用。
+description: 采用 tracer bullet 纵向切片，将计划、规格或 PRD 批量拆成可独立承接的实现 issue，并发布到项目 issue tracker。用户想把计划转为 issue、创建实现任务、将工作拆解为可执行 issue 时使用；勿触发于管理已有 issue 状态、标签或补齐信息，那些走 triage。
 disable-model-invocation: true
 ---
 

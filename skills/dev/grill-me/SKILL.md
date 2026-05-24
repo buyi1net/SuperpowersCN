@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: 围绕计划或设计高强度追问用户，压力测试方案，直到达成共享理解并解决关键决策分支。用户想压力测试方案、被追问设计，或提到 grill me、拷问我、追问我、帮我压力测试时使用。
+description: 围绕已有计划、设计草案或方案高强度追问用户，压力测试关键假设和风险，直到达成共享理解。用户想压力测试方案、被追问设计，或提到 grill me、拷问我、追问我、帮我压力测试时使用；勿触发于从零澄清模糊想法或写正式实现计划，分别走 brainstorming 和 writing-plans。
 disable-model-invocation: true
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: dispatching-parallel-agents
-description: 面对 2 个以上相互独立、没有共享状态或顺序依赖的任务时使用，用于并行分派多个 agent。用户说“这些问题互不相关”、“并行查一下”、“多个模块一起修”、“同时派几个 agent 看看”时也可触发。
+description: 面对 2 个以上相互独立、没有共享状态或顺序依赖的调查、排查或模块分析任务时使用，用于并行分派多个 agent。用户说"这些问题互不相关""并行查一下""多个模块一起看""同时派几个 agent 看看"时也可触发；勿触发于已有书面实现计划的执行，那些走 executing-plans 或 subagent-driven-development。
 disable-model-invocation: true
 ---
 

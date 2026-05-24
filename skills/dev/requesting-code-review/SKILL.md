@@ -1,6 +1,6 @@
 ---
 name: requesting-code-review
-description: 完成任务、实现重大功能、或合并前验证工作是否符合需求时使用。用户说“帮我 review 一下”“合并前审查”“代码写完了看一下”“提交前检查一下”时也可触发。
+description: 完成实现并已有验证证据后，请求代码审查以发现 bug、回归风险和缺失测试时使用。用户说"帮我 review 一下""合并前审查""代码写完了看一下""提交前检查一下"时也可触发；勿触发于处理已有 review 反馈或决定合并/清理分支，分别走 receiving-code-review 和 finishing-a-development-branch。
 disable-model-invocation: true
 ---
 

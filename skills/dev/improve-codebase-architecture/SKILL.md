@@ -1,6 +1,6 @@
 ---
 name: improve-codebase-architecture
-description: 基于 CONTEXT.md 中的领域语言和 docs/adr/ 中的架构决策，寻找代码库中的模块加深机会。用户想改进架构、寻找重构机会、合并紧耦合模块，或让代码库更易测试、更便于 AI 导航时使用。
+description: 基于 CONTEXT.md 中的领域语言和 docs/adr/ 中的架构决策，主动寻找代码库中的模块加深和架构改进机会。用户想改进架构、寻找重构机会、合并紧耦合模块，或让代码库更易测试、更便于 AI 导航时使用；勿触发于只想理解某段代码在系统中的位置，那些走 zoom-out。
 disable-model-invocation: true
 ---
 
