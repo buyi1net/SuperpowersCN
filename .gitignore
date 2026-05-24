@@ -2,6 +2,7 @@
 .claude/
 .vscode/
 handoff-temp/
+.superpowers/
 
 .env
 .env.*

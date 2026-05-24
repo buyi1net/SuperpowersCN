@@ -9,7 +9,7 @@
 - **先出草稿，后定稿**：翻译或增强阶段一律新建 `*_zh-CN.enhanced.md` 草稿，不覆盖原文件。
 - **定稿需确认**：用户说"定稿"后，先列出删除、重命名、索引同步、插件检查清单，并获得确认。
 - **定稿方式固定**：确认后先删除原文件，再把已审核增强稿重命名为原文件名；不要复制草稿内容覆盖原文件。
-- **索引必须同步**：定稿后同步 bucket README 和根 README 的描述；按项目规则检查 `.Codex-plugin/plugin.json`。
+- **索引必须同步**：定稿后同步 bucket README 和根 README 的描述；如果项目声明了插件入口，检查 `.Codex-plugin/plugin.json`。
 - **当前合成版 README 暂不逐项同步**：`D:\skills\superpowers\README.md` 已不作为逐个 skill 的目录索引；单个 skill 定稿时不需要同步该 README，等整个项目汉化完毕后再统一整理目录索引。
 - **不擅自清理**：删除草稿、源文件或多余文件前必须明确列清单并确认。
 - **先确认审核意见，再决定修改**：收到任何审核意见后，先逐条说明是否认可及理由；只有在双方确认需要调整后，才修改、重构或定稿，不默认直接改文件。
@@ -116,7 +116,7 @@
 - 标签常量和配置值：`needs-triage`、`ready-for-agent`、`single-context`、`multi-context`。
 - 格式名：`markdown`、`heredoc`、`dash-case`。
 - XML/伪标签：`<prd-template>`、`<issue-template>` 等。
-- JSON、bash、TypeScript 等代码块内的键名、代码、命令和示例。
+- JSON、TypeScript、Python、XML 等代码块内的键名、代码、命令和示例。`bash` 代码块中用于解释命令步骤的说明类注释可汉化；真正的命令、flag、路径、环境变量和参数值保持原样。JS/TS/Python/XML 等编程代码注释默认保留原文，除非该注释模拟最终用户可见文档或终端输出。
 - 引用原文：如 `publish to the issue tracker` 这种被 skill 明确引用的原句。
 - `issue tracker`、`triage labels` 等配置概念可在解释性句子中说明，但路径、模板名、引用原文中保持英文。
 
@@ -131,7 +131,7 @@
 | 固定输出文本 | 应汉化，例如 `None - can start immediately` → `无 — 可以立即开始` |
 | 写入 `AGENTS.md` / `AGENTS.md` 的结构标识 | 可保留英文，例如 `## Agent skills`、`### Issue tracker` |
 | Markdown 示例正文 | 应汉化；即使示例位于代码块中，只要它模拟的是用户文档、issue、PRD、comment、README、CONTEXT.md 或 ADR 的正文，就应汉化标题、段落、列表、占位说明和默认输出文本 |
-| 代码/命令示例 | 不动；仅保留真正的程序代码、CLI 命令、JSON/YAML/TOML 键名、文件路径、标签常量、API 名称和代码注释 |
+| 代码/命令示例 | 不动；仅保留真正的程序代码、CLI 命令、JSON/YAML/TOML 键名、文件路径、标签常量、API 名称和编程代码注释。`bash` 代码块中的说明类注释可汉化；JS/TS/Python/XML 等编程注释默认保留原文，除非它模拟最终用户可见文档或终端输出 |
 | JSON/代码块内键名 | 不动 |
 | XML/伪标签 | 不动 |
 | 格式参考模板（非最终产出） | 如果模板展示的是 Markdown 文档正文，默认汉化正文内容；只有字段名、命令、路径、代码、标签常量等不可汉化内容保留英文。若保留英文示例，必须说明它是外部协议或上游格式要求 |
@@ -158,7 +158,7 @@
 4. 明确这是破坏性操作，等待用户确认。
 5. 确认后删除原文件，再重命名增强稿。
 6. 同步 bucket README 和根 README。
-7. 检查 `.Codex-plugin/plugin.json` 是否已有对应 skill；按项目规则补齐或确认无需修改。
+7. 如果项目声明了插件入口（存在 `.Codex-plugin/plugin.json`），检查该文件是否已有对应 skill，按项目规则补齐。未声明插件入口的项目跳过此步。
 8. **验证步骤（新增）**：
    - 在对话中报告验证方式和结果。
    - 若存在原 skill 提供的核心测试用例，说明是否运行以及结果。
@@ -176,7 +176,7 @@
 - bucket README 的描述应简洁说明最终 `SKILL.md` 的能力。
 - 根 README 的 Reference 描述应与 bucket README 同步或略详细。
 - 如果 `description` 或核心行为说明发生变化，定稿前必须重审 bucket README 和根 README，不直接复用旧索引句。
-- `.Codex-plugin/plugin.json` 必须包含上述三个 bucket 中的正式 skill。
+- 如果项目声明了插件入口（存在 `.Codex-plugin/plugin.json`），该文件必须包含上述三个 bucket 中的正式 skill。
 - `personal/`、`in-progress/`、`deprecated/` 不应出现在根 README 或 plugin 中。
 
 ---
@@ -203,6 +203,7 @@
 - [ ] **不可汉化路径/文件名被改**：检测如 `Codex\.md`、`docs/adr/` 等是否被替换（模糊匹配） → 报错。
 - [ ] **术语表一致性**：扫描草稿中的英文术语（从术语表读取），若既未按表翻译又未出现在“不可汉化清单”中 → 警告。
 - [ ] **代码块内键名被汉化**：检测 JSON key 是否变成中文（如 `"描述":`） → 警告。
+- [ ] **代码注释处理边界**：检查 `bash` 说明类注释是否可按中文团队需要汉化；JS/TS/Python/XML 等编程注释是否未被误改，除非它模拟最终用户可见文档或终端输出。
 - [ ] **Markdown 示例正文未汉化**：检查代码块中的 `markdown` / `md` 示例；如果它模拟最终用户文档、issue/comment、PRD、CONTEXT.md、ADR 或 README 正文，标题、段落、列表和默认输出文本都应汉化，不能只用“示例可按团队语言调整”兜底。
 - [ ] **模板占位符被修改**：检测 `<[a-z\-]+>` 类标签是否内容改变 → 警告。
 

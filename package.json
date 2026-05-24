@@ -1,0 +1,13 @@
+{
+  "name": "superpowers-cn",
+  "version": "1.0.0",
+  "description": "AI 编程 Skills 简体中文合集 — SuperpowersCN",
+  "type": "module",
+  "private": true,
+  "files": [
+    "skills/",
+    "docs/",
+    "README.md",
+    "LICENSE"
+  ]
+}
