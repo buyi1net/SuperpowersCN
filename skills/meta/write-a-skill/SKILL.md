@@ -1,6 +1,6 @@
----
+﻿---
 name: write-a-skill
-description: 创建、改造、汉化或增强 agent skills，并保证结构清晰、触发条件明确、内容按渐进披露（progressive disclosure）组织。用户想“写一个 skill”“改造 skill”“汉化 skill”“做中文增强”“设计新 skill”时使用；勿触发于用户只是使用已有 skill 而非创建或修改 skill 的场景。
+description: 改造、汉化或增强已有 agent skills，并保证结构清晰、触发条件明确、内容按渐进披露（progressive disclosure）组织。用户说"汉化这个 skill""做中文增强""改造已有 skill""翻译这个 skill""审查这个 skill 的触发边界""调整这个 skill 的结构"时使用；勿触发于用户只是使用已有 skill 而非创建或修改 skill 的场景。本 skill 只做结构咨询和触发边界审查，不进入 TDD 创建流程；新建 skill 请走 writing-skills。
 disable-model-invocation: true
 ---
 
