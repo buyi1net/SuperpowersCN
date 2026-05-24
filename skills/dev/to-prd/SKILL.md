@@ -1,6 +1,6 @@
 ---
 name: to-prd
-description: 将当前对话上下文整理成 PRD，并发布到项目的 issue tracker。用户想基于当前上下文创建 PRD、沉淀规格或把已讨论方案发布成需求文档时使用。
+description: 将当前对话上下文整理成 PRD，并发布到项目的 issue tracker。用户想基于当前上下文创建 PRD、沉淀规格或把已讨论方案发布成需求文档时使用。用户说"写 PRD""导出 PRD""把方案写成需求文档""整理成 PRD""生成 PRD"时也可触发。
 disable-model-invocation: true
 ---
 

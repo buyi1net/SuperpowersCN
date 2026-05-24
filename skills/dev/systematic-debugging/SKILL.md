@@ -1,6 +1,6 @@
----
+﻿---
 name: systematic-debugging
-description: 遇到任何 bug、测试失败、构建失败、性能问题或异常行为，且准备提出修复方案前使用。用户说“修 bug”、“测试挂了”、“构建失败”、“行为不对”、“先改一下试试”、“帮我排查”时也可触发。
+description: 遇到任何 bug、测试失败、构建失败、性能问题或异常行为，且准备提出修复方案前使用。用户说"修 bug 前先排查""测试挂了""构建失败""行为不对""出了个 bug""这个 bug 先查原因""不要先改，先定位""帮我排查""找一下原因""先排查一下"时也可触发。已定位根因并准备实现修复时走 test-driven-development。
 disable-model-invocation: true
 ---
 
