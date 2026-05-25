@@ -1,6 +1,6 @@
 ﻿---
 name: prototype
-description: 需要在正式投入实现前，用可丢弃、可运行的原型验证设计、状态模型、数据模型或 UI 方向时使用。用户说"做个原型""先试一下""让我玩一下""看看几种设计""验证一下状态机"时也可触发；勿触发于系统级方案澄清或正式实现，分别走 brainstorming 和 test-driven-development。
+description: 需要在正式投入实现前，用可丢弃、可运行的原型验证设计、状态模型、数据模型或 UI 方向时使用。用户说"做个原型""先试一下""让我玩一下""比较几种可运行原型""验证一下状态机"时也可触发；勿触发于系统级方案澄清或正式实现，分别走 brainstorming 和 test-driven-development。
 disable-model-invocation: true
 ---
 
