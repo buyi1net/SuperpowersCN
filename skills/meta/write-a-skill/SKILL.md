@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # 编写 Skill
 
-帮助用户创建可维护、可触发、可执行的 agent skill。先明确用途和触发边界，再写 `SKILL.md`；如果用户要求单文件，就不要强行拆分资源文件。
+帮助用户创建可维护、可触发、可执行的 agent skill。先明确用途和触发边界，再写 `SKILL.md`；如果用户要求单文件，就不要强行拆分资源文件。产出 skill 文档前，先加载 `zh-cn-mode` 以确保输出语言为简体中文。
 
 ## 工作流程
 
@@ -60,13 +60,13 @@ name: skill-name
 description: [能力说明]。[用户口吻触发条件]。
 ---
 
-# Skill Name
+# Skill 名称
 
-## Quick Start
+## 快速开始
 
 [最小可用示例]
 
-## Workflow
+## 工作流
 
 [分步骤工作流程]
 ```

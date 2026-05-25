@@ -8,7 +8,7 @@
 
 ```
 Task tool (general-purpose):
-  description: "Review spec document"
+  description: "审查规格文档"
   prompt: |
     你是规格文档审阅者。请验证这份规格是否完整，并且已经准备好进入计划阶段。
 

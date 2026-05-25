@@ -45,6 +45,7 @@
 | 改一下这个 Word 文档，保留修订和评论 | `docx` | `pdf`, `doc-coauthoring` |
 | 打开网页测一下按钮交互，用浏览器点一下 | `playwright-cli` | `test-driven-development` |
 | 做个交接，把当前工作整理给下一个 agent | `handoff` | `doc-coauthoring` |
+| 用中文回复我，以后代码注释和文档都用中文写 | `zh-cn-mode` | 其他任务型 skill |
 
 ## 当前验收记录
 

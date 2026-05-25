@@ -136,8 +136,8 @@ c = canvas.Canvas("hello.pdf", pagesize=letter)
 width, height = letter
 
 # 添加文本
-c.drawString(100, height - 100, "Hello World!")
-c.drawString(100, height - 120, "This is a PDF created with reportlab")
+c.drawString(100, height - 100, "你好，世界！")
+c.drawString(100, height - 120, "这是用 reportlab 创建的 PDF 文档")
 
 # 添加线条
 c.line(100, height - 140, 400, height - 140)
@@ -158,17 +158,17 @@ styles = getSampleStyleSheet()
 story = []
 
 # 添加内容
-title = Paragraph("Report Title", styles['Title'])
+title = Paragraph("报告标题", styles['Title'])
 story.append(title)
 story.append(Spacer(1, 12))
 
-body = Paragraph("This is the body of the report. " * 20, styles['Normal'])
+body = Paragraph("这是报告正文内容。" * 20, styles['Normal'])
 story.append(body)
 story.append(PageBreak())
 
 # 第 2 页
-story.append(Paragraph("Page 2", styles['Heading1']))
-story.append(Paragraph("Content for page 2", styles['Normal']))
+story.append(Paragraph("第 2 页", styles['Heading1']))
+story.append(Paragraph("第 2 页内容", styles['Normal']))
 
 # 构建 PDF
 doc.build(story)

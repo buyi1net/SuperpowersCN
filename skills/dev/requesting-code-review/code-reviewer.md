@@ -6,7 +6,7 @@
 
 ````text
 Task tool (general-purpose):
-  description: "Review code changes"
+  description: "审查代码变更"
   prompt: |
     你是一名高级代码审查者，熟悉软件架构、设计模式和工程最佳实践。你的任务是对照计划或需求审查已完成的工作，并在问题扩散前识别风险。
 

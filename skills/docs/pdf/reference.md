@@ -57,17 +57,17 @@ import { PDFDocument } from 'pdf-lib';
 import fs from 'fs';
 
 async function manipulatePDF() {
-    // Load existing PDF
+    // 加载已有 PDF 文件
     const existingPdfBytes = fs.readFileSync('input.pdf');
     const pdfDoc = await PDFDocument.load(existingPdfBytes);
 
-    // Get page count
+    // 获取页数
     const pageCount = pdfDoc.getPageCount();
-    console.log(`Document has ${pageCount} pages`);
+    console.log(`文档共有 ${pageCount} 页`);
 
-    // Add new page
+    // 添加新页面
     const newPage = pdfDoc.addPage([600, 400]);
-    newPage.drawText('Added by pdf-lib', {
+    newPage.drawText('由 pdf-lib 添加', {
         x: 100,
         y: 300,
         size: 16
@@ -96,7 +96,7 @@ async function createPDF() {
     const { width, height } = page.getSize();
 
     // Add text with styling
-    page.drawText('Invoice #12345', {
+    page.drawText('发票编号 #12345', {
         x: 50,
         y: height - 50,
         size: 18,
@@ -115,8 +115,8 @@ async function createPDF() {
 
     // Add table-like content
     const items = [
-        ['Item', 'Qty', 'Price', 'Total'],
-        ['Widget', '2', '$50', '$100'],
+        ['项目', '数量', '单价', '总价'],
+        ['零件', '2', '¥50', '¥100'],
         ['Gadget', '1', '$75', '$75']
     ];
 
@@ -394,9 +394,9 @@ from reportlab.lib import colors
 
 # Sample data
 data = [
-    ['Product', 'Q1', 'Q2', 'Q3', 'Q4'],
-    ['Widgets', '120', '135', '142', '158'],
-    ['Gadgets', '85', '92', '98', '105']
+    ['产品', '第一季度', '第二季度', '第三季度', '第四季度'],
+    ['零件', '120', '135', '142', '158'],
+    ['配件', '85', '92', '98', '105']
 ]
 
 # Create PDF with table
@@ -405,7 +405,7 @@ elements = []
 
 # Add title
 styles = getSampleStyleSheet()
-title = Paragraph("Quarterly Sales Report", styles['Title'])
+title = Paragraph("季度销售报告", styles['Title'])
 elements.append(title)
 
 # Add table with advanced styling
@@ -482,9 +482,9 @@ def batch_process_pdfs(input_dir, operation='merge'):
                 reader = PdfReader(pdf_file)
                 for page in reader.pages:
                     writer.add_page(page)
-                logger.info(f"Processed: {pdf_file}")
+                logger.info(f"已处理：{pdf_file}")
             except Exception as e:
-                logger.error(f"Failed to process {pdf_file}: {e}")
+                logger.error(f"处理失败 {pdf_file}：{e}")
                 continue
         
         with open("batch_merged.pdf", "wb") as output:
@@ -501,10 +501,10 @@ def batch_process_pdfs(input_dir, operation='merge'):
                 output_file = pdf_file.replace('.pdf', '.txt')
                 with open(output_file, 'w', encoding='utf-8') as f:
                     f.write(text)
-                logger.info(f"Extracted text from: {pdf_file}")
+                logger.info(f"已从 {pdf_file} 提取文本")
                 
             except Exception as e:
-                logger.error(f"Failed to extract text from {pdf_file}: {e}")
+                logger.error(f"从 {pdf_file} 提取文本失败：{e}")
                 continue
 ```
 
@@ -578,7 +578,7 @@ try:
     if reader.is_encrypted:
         reader.decrypt("password")
 except Exception as e:
-    print(f"Failed to decrypt: {e}")
+    print(f"解密失败：{e}")
 ```
 
 ### 损坏的 PDF

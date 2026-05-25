@@ -47,7 +47,7 @@ playwright-cli run-code "async page => {
     if (body.username === 'admin') {
       route.fulfill({ body: JSON.stringify({ token: 'mock-token' }) });
     } else {
-      route.fulfill({ status: 401, body: JSON.stringify({ error: 'Invalid' }) });
+      route.fulfill({ status: 401, body: JSON.stringify({ error: '无效请求' }) });
     }
   });
 }"

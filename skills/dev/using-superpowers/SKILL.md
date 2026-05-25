@@ -99,8 +99,9 @@ digraph skill_flow {
 
 多个 skill 可能适用时，按以下顺序使用：
 
-1. **流程类 skills 优先**（brainstorming、debugging）：它们决定如何处理任务。
-2. **实现类 skills 其次**（frontend-design、mcp-builder）：它们指导具体执行。
+1. **基础环境 skills 优先**（zh-cn-mode）：在产出任何文档或注释之前确保语言规则已加载。
+2. **流程类 skills 其次**（brainstorming、debugging）：它们决定如何处理任务。
+3. **实现类 skills**（frontend-design、mcp-builder）：它们指导具体执行。
 
 “构建 X” -> 先用 `brainstorming`，再用实现类 skills。
 

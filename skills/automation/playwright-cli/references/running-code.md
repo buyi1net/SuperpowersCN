@@ -141,7 +141,7 @@ playwright-cli run-code "async page => {
 
 # 写入剪贴板
 playwright-cli run-code "async page => {
-  await page.evaluate(text => navigator.clipboard.writeText(text), 'Hello clipboard!');
+  await page.evaluate(text => navigator.clipboard.writeText(text), '你好，剪贴板！');
 }"
 ```
 
@@ -197,9 +197,9 @@ playwright-cli run-code "async page => {
 playwright-cli run-code "async page => {
   try {
     await page.getByRole('button', { name: 'Submit' }).click({ timeout: 1000 });
-    return 'clicked';
+    return '已点击';
   } catch (e) {
-    return 'element not found';
+    return '未找到元素';
   }
 }"
 ```
@@ -215,7 +215,7 @@ playwright-cli run-code "async page => {
   await page.getByRole('button', { name: 'Sign in' }).click();
   await page.waitForURL('**/dashboard');
   await page.context().storageState({ path: 'auth.json' });
-  return 'Login successful';
+  return '登录成功';
 }"
 
 # 从多个页面抓取数据

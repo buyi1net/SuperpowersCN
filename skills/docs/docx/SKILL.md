@@ -85,8 +85,8 @@ python scripts/office/validate.py doc.docx
 ### 页面尺寸
 
 ```javascript
-// IMPORTANT: docx-js defaults to A4, not US Letter
-// Always set page size explicitly for consistent results
+// 重要：docx-js 默认使用 A4 而非 US Letter
+// 始终显式设置页面尺寸以确保结果一致
 sections: [{
   properties: {
     page: {
@@ -128,10 +128,10 @@ const doc = new Document({
   styles: {
     default: { document: { run: { font: "Arial", size: 24 } } }, // 12pt default
     paragraphStyles: [
-      // IMPORTANT: Use exact IDs to override built-in styles
+      // 重要：使用精确 ID 来覆盖内置样式
       { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
         run: { size: 32, bold: true, font: "Arial" },
-        paragraph: { spacing: { before: 240, after: 240 }, outlineLevel: 0 } }, // outlineLevel required for TOC
+        paragraph: { spacing: { before: 240, after: 240 }, outlineLevel: 0 } }, // outlineLevel 是目录所必需的
       { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true,
         run: { size: 28, bold: true, font: "Arial" },
         paragraph: { spacing: { before: 180, after: 180 }, outlineLevel: 1 } },
@@ -148,11 +148,11 @@ const doc = new Document({
 ### 列表（切勿使用Unicode项目符号）
 
 ```javascript
-// ❌ WRONG - Never manually insert bullet characters
-new Paragraph({ children: [new TextRun("• 项目")] })  // WRONG
-new Paragraph({ children: [new TextRun("\u2022 项目")] })  // WRONG
+// ❌ 错误 — 永远不要手动插入项目符号字符
+new Paragraph({ children: [new TextRun("• 项目")] })  // 错误
+new Paragraph({ children: [new TextRun("\u2022 项目")] })  // 错误
 
-// ✅ CORRECT - Use numbering config with LevelFormat.BULLET
+// ✅ 正确 — 使用编号配置配合 LevelFormat.BULLET
 const doc = new Document({
   numbering: {
     config: [
@@ -184,8 +184,8 @@ const doc = new Document({
 **重要提示：表格需要双重宽度设置** - 同时设置表格的`columnWidths`和每个单元格的`width`。缺少任意一个，表格在某些平台会渲染错误。
 
 ```javascript
-// IMPORTANT: Always set table width for consistent rendering
-// IMPORTANT: Use ShadingType.CLEAR (not SOLID) to avoid black backgrounds
+// 重要：始终设置表格宽度以确保一致渲染
+// 重要：使用 ShadingType.CLEAR（而非 SOLID）避免黑色背景
 const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC" };
 const borders = { top: border, bottom: border, left: border, right: border };
 
@@ -230,7 +230,7 @@ columnWidths: [7000, 2360]  // Sum must equal table width
 ### 图片
 
 ```javascript
-// IMPORTANT: type parameter is required
+// 重要：type 参数是必需的
 new Paragraph({
   children: [new ImageRun({
     type: "png", // Required: png, jpg, jpeg, gif, bmp, svg
@@ -359,7 +359,7 @@ sections: [{
 ### 目录
 
 ```javascript
-// IMPORTANT: Headings must use HeadingLevel only - no custom styles
+// 重要：标题必须仅使用 HeadingLevel，不得使用自定义样式
 new TableOfContents("目录", { hyperlink: true, headingStyleRange: "1-3" })
 ```
 

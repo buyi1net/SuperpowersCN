@@ -55,19 +55,19 @@ async page => {
   // 显示章节卡片——模糊背景并显示对话框。
   // 阻塞直到 duration 到期，然后自动移除。
   // 用于简单场景，但始终可以自由定制精美的叠加层。
-  await page.screencast.showChapter('Adding Todo Items', {
-    description: 'We will add several items to the todo list.',
+  await page.screencast.showChapter('添加待办事项', {
+    description: '我们将添加几项待办事项。',
     duration: 2000,
   });
 
   // 执行操作
-  await page.getByRole('textbox', { name: 'What needs to be done?' }).pressSequentially('Walk the dog', { delay: 60 });
-  await page.getByRole('textbox', { name: 'What needs to be done?' }).press('Enter');
+  await page.getByRole('textbox', { name: '还有什么要做？' }).pressSequentially('遛狗', { delay: 60 });
+  await page.getByRole('textbox', { name: '还有什么要做？' }).press('Enter');
   await page.waitForTimeout(1000);
 
   // 显示下一个章节
-  await page.screencast.showChapter('Verifying Results', {
-    description: 'Checking the item appeared in the list.',
+  await page.screencast.showChapter('验证结果', {
+    description: '检查项目是否出现在列表中。',
     duration: 2000,
   });
 
@@ -77,12 +77,12 @@ async page => {
     <div style="position: absolute; top: 8px; right: 8px;
       padding: 6px 12px; background: rgba(0,0,0,0.7);
       border-radius: 8px; font-size: 13px; color: white;">
-      ✓ Item added successfully
+      ✓ 项目添加成功
     </div>
   `);
 
   // 在标注可见时执行更多操作
-  await page.getByRole('textbox', { name: 'What needs to be done?' }).pressSequentially('Buy groceries', { delay: 60 });
+  await page.getByRole('textbox', { name: '还有什么要做？' }).pressSequentially('购买食品', { delay: 60 });
   await page.getByRole('textbox', { name: 'What needs to be done?' }).press('Enter');
   await page.waitForTimeout(1500);
 
@@ -90,7 +90,7 @@ async page => {
   await annotation.dispose();
 
   // 你也可以高亮相关定位器并提供上下文标注。
-  const bounds = await page.getByText('Walk the dog').boundingBox();
+  const bounds = await page.getByText('遛狗').boundingBox();
   await page.screencast.showOverlay(`
     <div style="position: absolute;
       top: ${bounds.y}px;
@@ -107,7 +107,7 @@ async page => {
       background: #808080;
       border-radius: 10px;
       font-size: 14px;
-      color: white;">Check it out, it is right above this text
+      color: white;">看这里，就在这段文字的正上方
     </div>
   `, { duration: 2000 });
 

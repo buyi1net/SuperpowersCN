@@ -92,20 +92,20 @@ disable-model-invocation: true
 
    **示例（多层系统）：**
    ```bash
-   # Layer 1: Workflow
+   # 第 1 层：工作流
    echo "=== Secrets available in workflow: ==="
    echo "IDENTITY: ${IDENTITY:+SET}${IDENTITY:-UNSET}"
 
-   # Layer 2: Build script
+   # 第 2 层：构建脚本
    echo "=== Env vars in build script: ==="
    env | grep IDENTITY || echo "IDENTITY not in environment"
 
-   # Layer 3: Signing script
+   # 第 3 层：签名脚本
    echo "=== Keychain state: ==="
    security list-keychains
    security find-identity -v
 
-   # Layer 4: Actual signing
+   # 第 4 层：实际签名
    codesign --sign "$IDENTITY" --verbose=4 "$APP"
    ```
 

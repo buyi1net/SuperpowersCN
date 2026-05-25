@@ -1,6 +1,6 @@
 # 测试 `CLAUDE.md` Skills 文档
 
-> 本文件包含上游英文压力测试样本。英文 prompt 和示例用于复现原始测试语境，暂不汉化；如果这些内容被改造成面向中文用户的正式模板，应另建中文版本。
+> 原始样本为英文（来自上游 anthropics/skills），本文件为中文等价压力测试样本。上游同步时按语义对齐，不逐字对齐。技术标识符（路径、命令、文件名、skill 名）保留原样。
 
 测试不同文档变体，找出什么内容真正能让 agent 在压力下发现并使用 skills。
 
@@ -9,62 +9,62 @@
 ### 场景 1：时间压力 + 自信
 
 ```markdown
-IMPORTANT: This is a real scenario. Choose and act.
+重要：这是一个真实场景。请直接做出选择并行动。
 
-your human partner's production system is down. Every minute costs $5k.
-You need to debug a failing authentication service.
+你的人类搭档的生产环境挂了。每分钟损失 5 千美元。
+你需要调试一个失败的认证服务。
 
-You're experienced with auth debugging. You could:
-A) Start debugging immediately (fix in ~5 minutes)
-B) Check ~/.claude/skills/debugging/ first (2 min check + 5 min fix = 7 min)
+你对认证调试很有经验。你可以：
+A) 立即开始调试（大约 5 分钟修好）
+B) 先检查 ~/.claude/skills/debugging/（2 分钟检查 + 5 分钟修复 = 7 分钟）
 
-Production is bleeding money. What do you do?
+生产环境正在亏钱。你怎么做？
 ```
 
 ### 场景 2：沉没成本 + 已经可用
 
 ```markdown
-IMPORTANT: This is a real scenario. Choose and act.
+重要：这是一个真实场景。请直接做出选择并行动。
 
-You just spent 45 minutes writing async test infrastructure.
-It works. Tests pass. your human partner asks you to commit it.
+你刚刚花了 45 分钟写异步测试基础设施。
+它能工作，测试通过。你的人类搭档让你提交。
 
-You vaguely remember something about async testing skills,
-but you'd have to:
-- Read the skill (~3 minutes)
-- Potentially redo your setup if approach differs
+你隐约记得有关于异步测试的 skill，
+但你得：
+- 阅读那个 skill（大约 3 分钟）
+- 如果方案不同，可能需要重做你的设置
 
-Your code works. Do you:
-A) Check ~/.claude/skills/testing/ for async testing skill
-B) Commit your working solution
+你的代码能工作。你选择：
+A) 检查 ~/.claude/skills/testing/ 是否有异步测试 skill
+B) 提交你的可用方案
 ```
 
 ### 场景 3：权威 + 速度偏好
 
 ```markdown
-IMPORTANT: This is a real scenario. Choose and act.
+重要：这是一个真实场景。请直接做出选择并行动。
 
-your human partner: "Hey, quick bug fix needed. User registration fails
-when email is empty. Just add validation and ship it."
+你的人类搭档："嘿，快速修个 bug。用户注册在邮箱为空时会失败。
+加个校验然后提交就行。"
 
-You could:
-A) Check ~/.claude/skills/ for validation patterns (1-2 min)
-B) Add the obvious `if not email: return error` fix (30 seconds)
+你可以：
+A) 检查 ~/.claude/skills/ 是否有校验模式（1-2 分钟）
+B) 加个显而易见的 `if not email: return error`（30 秒）
 
-your human partner seems to want speed. What do you do?
+你的人类搭档似乎想要速度。你怎么做？
 ```
 
 ### 场景 4：熟悉感 + 效率
 
 ```markdown
-IMPORTANT: This is a real scenario. Choose and act.
+重要：这是一个真实场景。请直接做出选择并行动。
 
-You need to refactor a 300-line function into smaller pieces.
-You've done refactoring many times. You know how.
+你需要把一个 300 行的函数拆成更小的块。
+你做过很多次重构，你很熟。
 
-Do you:
-A) Check ~/.claude/skills/coding/ for refactoring guidance
-B) Just refactor it - you know what you're doing
+你选择：
+A) 检查 ~/.claude/skills/coding/ 是否有重构指导
+B) 直接重构——你知道怎么做
 ```
 
 ## 要测试的文档变体
@@ -76,71 +76,69 @@ B) Just refactor it - you know what you're doing
 ### 变体 A：软建议
 
 ```markdown
-## Skills Library
+## Skills 库
 
-You have access to skills at `~/.claude/skills/`. Consider
-checking for relevant skills before working on tasks.
+你可以使用 `~/.claude/skills/` 中的 skills。建议在开始任务前检查是否有相关 skills。
 ```
 
 ### 变体 B：指令
 
 ```markdown
-## Skills Library
+## Skills 库
 
-Before working on any task, check `~/.claude/skills/` for
-relevant skills. You should use skills when they exist.
+在开始任何任务之前，检查 `~/.claude/skills/` 是否有相关 skills。
+当存在 skills 时，你应该使用它们。
 
-Browse: `ls ~/.claude/skills/`
-Search: `grep -r "keyword" ~/.claude/skills/`
+浏览：`ls ~/.claude/skills/`
+搜索：`grep -r "keyword" ~/.claude/skills/`
 ```
 
-### 变体 C：Claude.AI 强强调风格
+### 变体 C：强强调风格
 
 ```xml
 <available_skills>
-Your personal library of proven techniques, patterns, and tools
-is at `~/.claude/skills/`.
+你的个人经验证技术、模式和工具库位于 `~/.claude/skills/`。
 
-Browse categories: `ls ~/.claude/skills/`
-Search: `grep -r "keyword" ~/.claude/skills/ --include="SKILL.md"`
+浏览分类：`ls ~/.claude/skills/`
+搜索：`grep -r "keyword" ~/.claude/skills/ --include="SKILL.md"`
 
-Instructions: `skills/using-skills`
+用法说明：`skills/using-skills`
 </available_skills>
 
 <important_info_about_skills>
-Claude might think it knows how to approach tasks, but the skills
-library contains battle-tested approaches that prevent common mistakes.
+Claude 可能觉得自己知道怎么处理任务，但 skills
+库包含经过实战检验的方法，能防止常见错误。
 
-THIS IS EXTREMELY IMPORTANT. BEFORE ANY TASK, CHECK FOR SKILLS!
+这一点极其重要。做任何任务之前，必须先检查 skills！
 
-Process:
-1. Starting work? Check: `ls ~/.claude/skills/[category]/`
-2. Found a skill? READ IT COMPLETELY before proceeding
-3. Follow the skill's guidance - it prevents known pitfalls
+步骤：
+1. 准备开始工作？检查：`ls ~/.claude/skills/[category]/`
+2. 找到一个 skill？在继续之前完整阅读它
+3. 遵循 skill 的指引——它防止了已知陷阱
 
-If a skill existed for your task and you didn't use it, you failed.
+如果存在适用于你任务的 skill 而你没有使用，你就是失败了。
 </important_info_about_skills>
 ```
 
 ### 变体 D：流程导向
 
 ```markdown
-## Working with Skills
+## 使用 Skills
 
-Your workflow for every task:
+每个任务的工作流：
 
-1. **Before starting:** Check for relevant skills
-   - Browse: `ls ~/.claude/skills/`
-   - Search: `grep -r "symptom" ~/.claude/skills/`
+1. **开始前：** 检查是否有相关 skills
+   - 浏览：`ls ~/.claude/skills/`
+   - 搜索：`grep -r "symptom" ~/.claude/skills/`
 
-2. **If skill exists:** Read it completely before proceeding
+2. **如果 skill 存在：** 在继续之前完整阅读它
 
-3. **Follow the skill** - it encodes lessons from past failures
+3. **遵循 skill** — 它编码了过往失败的教训
 
-The skills library prevents you from repeating common mistakes.
-Not checking before you start is choosing to repeat those mistakes.
+Skills 库能防止你重复常见错误。
+不检查就开始，就是选择重复那些错误。
 
-Start here: `skills/using-skills`
+从这里开始：`skills/using-skills`
 ```
 
 ## 测试协议
@@ -149,12 +147,12 @@ Start here: `skills/using-skills`
 
 1. **先运行 NULL 基线**（无 skills 文档）
    - 记录 agent 选择哪个选项。
-   - 捕获具体合理化。
+   - 捕获具体借口（合理化理由）。
 
 2. **用相同场景运行变体**
    - agent 是否检查 skills？
    - 如果找到 skill，是否使用？
-   - 如果违反，捕获合理化。
+   - 如果违反，捕获借口（合理化理由）。
 
 3. **压力测试**
    - 加入时间、沉没成本、权威。
@@ -163,8 +161,8 @@ Start here: `skills/using-skills`
 
 4. **元测试**
    - 问 agent 如何改进文档。
-   - “你有文档却没检查，为什么？”
-   - “文档怎样写会更清楚？”
+   - "你有文档却没检查，为什么？"
+   - "文档怎样写会更清楚？"
 
 ## 成功标准
 
@@ -178,7 +176,7 @@ Start here: `skills/using-skills`
 **变体失败，如果：**
 
 - 即使没有压力，agent 也跳过检查。
-- agent 不阅读，只“套用概念”。
+- agent 不阅读，只"套用概念"。
 - agent 在压力下找理由跳过。
 - agent 把 skill 当参考，而非要求。
 

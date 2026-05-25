@@ -8,7 +8,7 @@
 
 ```text
 Task tool (general-purpose):
-  description: "Review plan document"
+  description: "审查计划文档"
   prompt: |
     你是计划文档审查者。请验证这份计划是否完整，是否已经可以交给实现者执行。
 

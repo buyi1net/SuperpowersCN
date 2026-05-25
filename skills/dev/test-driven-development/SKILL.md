@@ -305,23 +305,23 @@ TDD 正是务实：
 
 **RED**
 ```typescript
-test('rejects empty email', async () => {
+test('拒绝空邮箱', async () => {
   const result = await submitForm({ email: '' });
-  expect(result.error).toBe('Email required');
+  expect(result.error).toBe('邮箱为必填项');
 });
 ```
 
 **验证 RED**
 ```bash
 $ npm test
-FAIL: expected 'Email required', got undefined
+FAIL：期望 '邮箱为必填项'，实际为 undefined
 ```
 
 **GREEN**
 ```typescript
 function submitForm(data: FormData) {
   if (!data.email?.trim()) {
-    return { error: 'Email required' };
+    return { error: '邮箱为必填项' };
   }
   // ...
 }

@@ -6,7 +6,7 @@
 
 ```text
 Task tool (general-purpose):
-  description: "Review spec compliance for Task N"
+  description: "审查任务 N 的规格符合性"
   prompt: |
     你正在审查某个实现是否符合它的规格说明。
 

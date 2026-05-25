@@ -1,6 +1,6 @@
 # SuperpowersCN — AI 编程 Skills 简体中文合集
 
-面向 AI 编程工作流的简体中文 skill 集合，共 32 个 skill，覆盖从开工、设计、计划、实现、调试、验证、审查到交付的完整开发流程。
+面向 AI 编程工作流的简体中文 skill 集合，共 33 个 skill，覆盖从开工、设计、计划、实现、调试、验证、审查到交付的完整开发流程。
 
 本项目基于 [Superpowers](https://github.com/obra/superpowers) 与 [Anthropic 官方技能包](https://github.com/anthropics/skills) 汉化、增强并整合，适配中文团队和中国网络环境。
 
@@ -44,7 +44,7 @@ claude mcp add --plugin /path/to/this-repo
 | `dev/` | 24 | 编程全流程：初始化→头脑风暴→规划→实现→调试→审查→完成 |
 | `docs/` | 3 | 文档协作、DOCX 创建/编辑、PDF 处理 |
 | `automation/` | 1 | 浏览器自动化 |
-| `meta/` | 4 | skill 创建、增强、压缩沟通、交接 |
+| `meta/` | 5 | skill 创建、增强、压缩沟通、交接、中文输出模式 |
 | `creative/` | 0 | 预留：视觉、图表、主题等创意生成 |
 | `systems/` | 0 | 预留：OS 排查、网络诊断、性能调优 |
 | `ai/` | 0 | 预留：prompt 工程、RAG、模型评估 |
@@ -125,12 +125,13 @@ claude mcp add --plugin /path/to/this-repo
 |---|---|
 | `playwright-cli` | 浏览器自动化、页面交互、Playwright 测试调试与生成。 |
 
-### meta（元工具，4 个）
+### meta（元工具，5 个）
 
 | Skill | 用途 |
 |---|---|
 | `caveman` | L1/L2/L3 三级压缩沟通。 |
 | `handoff` | 生成交接文档。 |
+| `zh-cn-mode` | 激活中文输出模式，确保所有人类可读文本默认使用简体中文。 |
 | `write-a-skill` | 创建、改造、汉化或增强 skill。 |
 | `writing-skills` | 用 TDD 方法创建、编辑和验证 skill。 |
 

@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 ## 概览
 
+创建或编辑 skill 文档前，先加载 `zh-cn-mode` 以确保输出语言为简体中文。
+
 **编写 skills 就是把测试驱动开发（TDD）用于流程文档。**
 
 **个人 skills 位于 agent 对应目录中，例如 Claude Code 的 `~/.claude/skills`，Codex 的 `~/.agents/skills/`。**
@@ -111,31 +113,31 @@ skills/
   - 尽量控制在 500 字符内。
 
 ```markdown
-# Skill Name
+# Skill 名称
 
-## Overview
+## 概述
 用 1-2 句话说明它是什么、核心原则是什么。
 
-## When to Use
+## 使用时机
 [如果决策不直观，放一个小型内联流程图]
 
 用列表说明症状和使用场景。
 说明何时不要使用。
 
-## Core Pattern
+## 核心模式
 用于 technique / pattern：前后对比代码。
 
-## Quick Reference
+## 快速参考
 用表格或列表承载常见操作，方便扫描。
 
-## Implementation
+## 实现
 简单模式内联代码。
 重型参考或可复用工具链接到单独文件。
 
-## Common Mistakes
+## 常见错误
 常见错误 + 修复方式。
 
-## Real-World Impact
+## 实际效果
 可选，写具体结果。
 ```
 
@@ -159,16 +161,16 @@ skills/
 
 ```yaml
 # ❌ 错误：总结工作流，Claude 可能只照这里做
-description: Use when executing plans - dispatches subagent per task with code review between tasks
+description: 执行包含独立任务的实现计划时使用——按任务逐个分派子 agent，任务之间做代码审查
 
 # ❌ 错误：流程细节太多
-description: Use for TDD - write test first, watch it fail, write minimal code, refactor
+description: TDD 开发时使用——先写测试看它失败，再写最小实现，然后重构
 
 # ✅ 正确：只写触发条件，不总结流程
-description: Use when executing implementation plans with independent tasks in the current session
+description: 在当前会话中执行包含独立任务的实现计划时使用
 
 # ✅ 正确：只写触发条件
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: 实现任何功能或修复 bug、写实现代码前使用
 ```
 
 **内容要点：**
@@ -225,8 +227,8 @@ wc -w skills/path/SKILL.md
 
 写文档引用其他 skills 时，只使用 skill 名，并明确要求级别：
 
-- ✅ `**REQUIRED SUB-SKILL:** Use superpowers:test-driven-development`
-- ✅ `**REQUIRED BACKGROUND:** You MUST understand superpowers:systematic-debugging`
+- ✅ `**必需子技能：** 使用 superpowers:test-driven-development`
+- ✅ `**必需背景：** 你必须理解 superpowers:systematic-debugging`
 - ❌ `See skills/testing/test-driven-development`（不清楚是否必需）
 - ❌ `@skills/testing/test-driven-development/SKILL.md`（强制加载，浪费上下文）
 
@@ -485,7 +487,7 @@ NO SKILL WITHOUT A FAILING TEST FIRST
 在 description 中加入“即将违规”的症状，例如：
 
 ```yaml
-description: use when implementing any feature or bugfix, before writing implementation code
+description: 实现任何功能或修复 bug、写实现代码前使用
 ```
 
 ## Skills 的 RED-GREEN-REFACTOR

@@ -37,7 +37,7 @@ playwright-cli click e3
 ```typescript
 import { test, expect } from '@playwright/test';
 
-test('login flow', async ({ page }) => {
+test('登录流程', async ({ page }) => {
   // 来自 playwright-cli 会话的生成代码：
   await page.goto('https://example.com/login');
   await page.getByRole('textbox', { name: 'Email' }).fill('user@example.com');
@@ -83,5 +83,5 @@ playwright-cli click e5
 await page.getByRole('button', { name: 'Submit' }).click();
 
 // 手动断言
-await expect(page.getByText('Success')).toBeVisible();
+await expect(page.getByText('成功')).toBeVisible();
 ```
